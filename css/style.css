@@ -16,7 +16,7 @@ p {
     font-size: 13px;
 }
 
-#enter, .comment-field {
+#form, .comment-field {
     background-color: #ffffff;
     border-radius: 5px;
     box-sizing: border-box;
@@ -29,7 +29,7 @@ p {
     display: block;
     width: 100%;
     margin-bottom: 20px;
-    padding: 10px 25px;
+    padding: 10px 15px;
     box-sizing: border-box;
     border-radius: 5px;
     border: 2px solid rgba(80, 145, 250, 0.7);
@@ -38,7 +38,7 @@ p {
     font-size: 13px;
 }
 
-#name {
+#input-name {
     height: 30px;
 }
 

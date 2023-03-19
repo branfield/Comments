@@ -1,11 +1,39 @@
+let validation = new JustValidate('#form',{
+    errorLabelStyle: {
+        color: '#4682B4',
+        fontFamily: '"Gill Sans", sans-serif',
+        fontSize: '13px',
+        marginBottom: '20px'
+    }
+});
+
+validation.addField("#input-name", [
+    {
+        rule: 'required',
+        errorMessage : '* Поле обязательно для заполнения'
+    }
+])
+.addField("#input-text", [
+    {
+        rule: 'required',
+        errorMessage : '* Поле обязательно для заполнения'
+    },
+    {
+        rule: 'minLength',
+        value: 10,
+        errorMessage : '* Комментарий должен быть не короче 10-ти символов'
+    }
+])
+
 let comments = [];
 
-document.getElementById("submit").onclick = function(){
+document.getElementById("submit").onclick = readComment;
+
+function readComment(){
 
     let inputName = document.getElementById ("input-name").value;
     let inputText = document.getElementById ("input-text").value;
     let inputDate = document.getElementById ("input-date").value;
-    inputDate = dateValidation(inputDate);
 
     let comment = {
         name : inputName,
@@ -13,17 +41,12 @@ document.getElementById("submit").onclick = function(){
         date : inputDate
     }
 
-    console.log(comment);
-
     comments.push(comment);
     showComment(comment);
-}
 
-function dateValidation (inputDate) {
-    let now = new Date;
-    let commentDate = new Date(inputDate);
-    if (commentDate == now || commentDate == '' || commentDate == null) { return 'Сегодня'; }
-    else return inputDate;
+    document.getElementById ("input-name").value = '';
+    document.getElementById ("input-text").value = '';
+    document.getElementById ("input-date").value = ''; 
 }
 
 function showComment(comment){
@@ -137,8 +160,6 @@ function showComment(comment){
 
     document.body.appendChild( div ); 
 } 
-
-
 
 
 

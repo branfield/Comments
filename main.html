@@ -5,14 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comments</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
 </head>
 <body>
-    <div id="enter">
-        <input type="text" id="input-name" placeholder="Ваше имя"> 
-        <textarea type="text" id="input-text" placeholder="Введите текст комментария"></textarea>
+    <form class="form" id="form" action="">
+        <div class="form-name">
+            <input type="text" id="input-name" placeholder="Ваше имя"> 
+        </div>
+        <div class="form-text">
+            <textarea type="text" id="input-text" placeholder="Введите текст комментария"></textarea>
+        </div>
         <input type="date" id="input-date">
-        <button id="submit">Отправить</button>
-    </div>
+        <button type="submit" id="submit">Отправить</button>
+    </form>
     <script src="scripts/script.js"></script>
 </body>
 </html>
