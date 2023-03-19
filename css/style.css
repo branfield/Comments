@@ -1,0 +1,79 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 30px;
+    background-color: rgba(80, 145, 250, 0.7);
+    min-width: 600px;
+}
+
+p {
+    font-family: "Gill Sans", sans-serif;
+    font-size: 13px;
+}
+
+#enter, .comment-field {
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 35px 40px;
+    min-width: 300px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+#input-name, #input-text, #input-date {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px 25px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 2px solid rgba(80, 145, 250, 0.7);
+    margin-bottom: 17px;
+    font-family: "Gill Sans", sans-serif;
+    font-size: 13px;
+}
+
+#name {
+    height: 30px;
+}
+
+#input-text {
+    height: 120px;
+}
+
+#input-date {
+    display: inline;
+    width: 21%;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 60px;
+    max-height: 300px;
+}
+
+
+#submit {
+    font-size: 14px;
+    line-height: 16px;
+    background: #fff;
+    border: 2px solid rgba(80, 145, 250, 0.7);
+    border-radius: 100px;
+    padding: 10px 30px;
+    -webkit-transition: all 0.8s ease;
+    transition: all 0.4s ease;
+    float: right;
+  }
+
+#submit:hover {
+    background: rgba(80, 145, 250, 0.7);
+    color: #fff;
+  }
+
+
+
