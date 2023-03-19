@@ -1,3 +1,5 @@
+let comments = [];
+
 let validation = new JustValidate('#form',{
     errorLabelStyle: {
         color: '#4682B4',
@@ -24,16 +26,31 @@ validation.addField("#input-name", [
         errorMessage : '* Комментарий должен быть не короче 10-ти символов'
     }
 ])
+.onSuccess((event) => {
+    document.getElementById("submit").onclick = readComment;
+  });
 
-let comments = [];
-
-document.getElementById("submit").onclick = readComment;
+//document.getElementById("submit").onclick = readComment;
 
 function readComment(){
 
     let inputName = document.getElementById ("input-name").value;
     let inputText = document.getElementById ("input-text").value;
     let inputDate = document.getElementById ("input-date").value;
+
+    let localTime = new Date().toLocaleTimeString().slice(0,-3);
+    let now = new Date();
+    let yesterday = (now.setDate(now.getDate() - 1));
+    yesterday = now.toLocaleDateString();
+    now = new Date().toLocaleDateString();
+
+    if (inputDate == '') { inputDate = 'Сегодня, ' + localTime; }
+    else { inputDate = new Date(inputDate).toLocaleDateString(); }
+
+    if (inputDate == now) { inputDate = 'Сегодня, ' + localTime; }
+    else if (inputDate == yesterday) { inputDate = 'Вчера, ' + localTime; }
+
+    console.log (inputDate);
 
     let comment = {
         name : inputName,
@@ -160,7 +177,3 @@ function showComment(comment){
 
     document.body.appendChild( div ); 
 } 
-
-
-
-
